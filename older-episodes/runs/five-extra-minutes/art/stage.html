@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>The Five Extra Minutes</title>
+<style>@font-face{font-family:Story;src:url(DejaVuSerif-Bold.ttf)}@font-face{font-family:Label;src:url(DejaVuSans-Bold.ttf)}*{box-sizing:border-box}body{margin:0;background:#0b101b;display:grid;place-items:center;height:100vh}canvas{height:min(100vh,177.78vw);width:auto}</style>
+<canvas id="film" width="720" height="1280" aria-label="The Five Extra Minutes"></canvas>
+<script src="drawing.js"></script><script src="actors.js"></script><script src="scenes.js"></script><script src="player.js"></script><style>.controls{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);width:min(90vw,350px)}audio{width:100%}</style>
+<div class="controls"><audio id="sound" controls src="../audio/mix.wav"></audio></div>
+<script src="../output/edit-data.js"></script>
+<script>
+(async()=>{if(!window.episodeData)return;await Promise.all([document.fonts.load("28px Story"),document.fonts.load("12px Label")]);loadEpisode(episodeData);
+const sound=document.querySelector('audio');function tick(){drawFrame(sound.currentTime);if(!sound.paused)requestAnimationFrame(tick)}sound.addEventListener('play',tick);sound.addEventListener('seeked',()=>drawFrame(sound.currentTime));drawFrame(0)})();
+</script></html>

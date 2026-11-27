@@ -1,0 +1,192 @@
+[
+  {
+    "id": "record",
+    "spoken": "By Friday, Mara had lit three hundred lamps.",
+    "speed": 1.02,
+    "pause": 0.14,
+    "direction": "An amused sense of disbelief",
+    "accent": "hundred"
+  },
+  {
+    "id": "street",
+    "spoken": "So why was Bell Street dark?",
+    "speed": 0.94,
+    "pause": 0.4,
+    "direction": "Drop into a genuine question",
+    "accent": "dark"
+  },
+  {
+    "id": "route",
+    "spoken": "For years, Mara had walked the same route each evening.",
+    "speed": 1.03,
+    "pause": 0.13,
+    "direction": "Tell it like a memory",
+    "accent": ""
+  },
+  {
+    "id": "bread",
+    "spoken": "Past the bakery. Over the bridge. All the way to the last lamp by the water.",
+    "speed": 1.05,
+    "pause": 0.21,
+    "direction": "Let the three landmarks build",
+    "accent": "water"
+  },
+  {
+    "id": "child",
+    "spoken": "From there, she could see little yellow windows floating all the way home.",
+    "speed": 0.99,
+    "pause": 0.3,
+    "direction": "Warm and unhurried",
+    "accent": "home"
+  },
+  {
+    "id": "clerk",
+    "spoken": "Then the town hired a clerk who liked things he could count.",
+    "speed": 1.06,
+    "pause": 0.13,
+    "direction": "A small smile on clerk",
+    "accent": "count"
+  },
+  {
+    "id": "counter",
+    "spoken": "He clipped a brass counter to her lighter. One click for every flame.",
+    "speed": 1.02,
+    "pause": 0.2,
+    "direction": "Explain the rule clearly",
+    "accent": "click"
+  },
+  {
+    "id": "rule",
+    "spoken": "The top score on Friday earns a gold coin, he said.",
+    "speed": 1.03,
+    "pause": 0.23,
+    "direction": "Play the clerk lightly",
+    "accent": "coin"
+  },
+  {
+    "id": "wind",
+    "spoken": "That night the wind blew out the bakery lamp. Mara lit it again.",
+    "speed": 1.04,
+    "pause": 0.14,
+    "direction": "A small interruption",
+    "accent": "wind"
+  },
+  {
+    "id": "click",
+    "spoken": "Click. She looked at the counter. Then she blew.",
+    "speed": 0.93,
+    "pause": 0.38,
+    "direction": "Dry surprise, leave space after click",
+    "accent": "click"
+  },
+  {
+    "id": "again",
+    "spoken": "Out. On. Two clicks, and she had barely moved her feet.",
+    "speed": 1.02,
+    "pause": 0.25,
+    "direction": "Short, mischievous beats",
+    "accent": "two"
+  },
+  {
+    "id": "score",
+    "spoken": "By Friday, the clerk had a lovely number to write in his book.",
+    "speed": 1.08,
+    "pause": 0.17,
+    "direction": "Pleased with himself",
+    "accent": "number"
+  },
+  {
+    "id": "award",
+    "spoken": "Three hundred! He pressed the coin into her hand.",
+    "speed": 0.99,
+    "pause": 0.31,
+    "direction": "Brief celebration",
+    "accent": "hundred"
+  },
+  {
+    "id": "bridge",
+    "spoken": "On the walk home, Mara found a boy sitting at the foot of the bridge.",
+    "speed": 1.04,
+    "pause": 0.18,
+    "direction": "Slow the approach",
+    "accent": "boy",
+    "labels": [
+      "On the",
+      "walk",
+      "home,",
+      "Mara",
+      "found",
+      "a",
+      "boy",
+      "sitting",
+      "at",
+      "the",
+      "foot",
+      "of the",
+      "bridge."
+    ]
+  },
+  {
+    "id": "boy",
+    "spoken": "I can hear the water, he said. Where does the bridge start?",
+    "speed": 0.91,
+    "pause": 0.42,
+    "direction": "Small, sincere question",
+    "accent": "start"
+  },
+  {
+    "id": "wallet",
+    "spoken": "She put the coin in her pocket. It gave off surprisingly little light.",
+    "speed": 0.98,
+    "pause": 0.35,
+    "direction": "Underplay the irony",
+    "accent": "light"
+  },
+  {
+    "id": "inbox",
+    "spoken": "Ever cleared ten easy emails just to watch the little red number disappear?",
+    "speed": 1.04,
+    "pause": 0.18,
+    "direction": "Conspiratorial question",
+    "accent": "disappear"
+  },
+  {
+    "id": "draft",
+    "spoken": "Meanwhile, the one person who actually needs your answer is still waiting.",
+    "speed": 0.98,
+    "pause": 0.38,
+    "direction": "Let waiting land",
+    "accent": "waiting"
+  },
+  {
+    "id": "home",
+    "spoken": "Mara walked the boy across. On the far side, she lit the last lamp.",
+    "speed": 0.98,
+    "pause": 0.22,
+    "direction": "Gentle resolution",
+    "accent": "lit",
+    "labels": [
+      "Mara",
+      "walked",
+      "the",
+      "boy",
+      "across.",
+      "On the",
+      "far",
+      "side,",
+      "she",
+      "lit",
+      "the",
+      "last",
+      "lamp."
+    ]
+  },
+  {
+    "id": "end",
+    "spoken": "This time, she left the counter in her pocket.",
+    "speed": 0.89,
+    "pause": 0.82,
+    "direction": "Quiet, conclusive",
+    "accent": "pocket"
+  }
+]

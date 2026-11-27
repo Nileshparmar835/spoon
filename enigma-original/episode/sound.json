@@ -1,0 +1,23 @@
+{
+  "quiet_from": "boy",
+  "quiet_until": "home",
+  "cues": [
+    ["record","three","click",0.24,-0.12],
+    ["street","dark","low",0.35,0],
+    ["bread","bakery","chime",0.16,-0.28],
+    ["counter","clipped","click",0.32,-0.16],
+    ["counter","click","click",0.42,0],
+    ["rule","gold","coin",0.21,0.22],
+    ["wind","wind","air",0.36,0.2],
+    ["wind","again","spark",0.28,0.24],
+    ["click","Click","click",0.47,0],
+    ["click","blew","air",0.22,0.2],
+    ["again","On","spark",0.25,0.16],
+    ["again","Two","click",0.35,-0.11],
+    ["award","pressed","coin",0.29,0.1],
+    ["wallet","pocket","cloth",0.36,-0.15],
+    ["inbox","disappear","click",0.16,0.14],
+    ["home","lit","spark",0.30,0.2],
+    ["end","pocket","chime",0.17,0]
+  ]
+}

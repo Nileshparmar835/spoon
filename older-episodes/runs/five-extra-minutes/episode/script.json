@@ -1,0 +1,368 @@
+[
+  {
+    "id": "shop",
+    "accent": "time",
+    "spoken": "Mister Orrin sold time. Five extra minutes, for one silver coin!",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "Mister Orrin sold time.",
+        "speed": 0.9,
+        "pitch": 1.0,
+        "gain": 0,
+        "pause": 0.35
+      },
+      {
+        "who": "narrator",
+        "text": "Five extra minutes, for one silver coin!",
+        "speed": 1.04,
+        "pitch": 1.03,
+        "gain": 0,
+        "pause": 0.4
+      }
+    ]
+  },
+  {
+    "id": "arrive",
+    "accent": "enough",
+    "spoken": "And what about Nora? Nora never had enough of it.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "And what about Nora?",
+        "speed": 0.98,
+        "pitch": 1.02,
+        "gain": 0,
+        "pause": 0.28
+      },
+      {
+        "who": "narrator",
+        "text": "Nora never had enough of it.",
+        "speed": 1.0,
+        "pitch": 0.99,
+        "gain": 0,
+        "pause": 0.3
+      }
+    ]
+  },
+  {
+    "id": "buy",
+    "accent": "wisely",
+    "spoken": "Five more! Quick, please! Spend them wisely, my dear.",
+    "parts": [
+      {
+        "who": "nora",
+        "text": "Five more! Quick, please!",
+        "speed": 1.18,
+        "pitch": 1.04,
+        "gain": 1,
+        "pause": 0.28
+      },
+      {
+        "who": "orrin",
+        "text": "Spend them wisely, my dear.",
+        "speed": 0.82,
+        "pitch": 0.94,
+        "gain": -1,
+        "pause": 0.45
+      }
+    ]
+  },
+  {
+    "id": "report",
+    "accent": "report",
+    "spoken": "The first five, she spent finishing a report.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "The first five, she spent finishing a report.",
+        "speed": 1.02,
+        "pitch": 1.0,
+        "gain": 0,
+        "pause": 0.22
+      }
+    ]
+  },
+  {
+    "id": "pings",
+    "accent": "messages",
+    "spoken": "The next five, answering messages. Ping! Ping! Ping!",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "The next five, answering messages.",
+        "speed": 1.08,
+        "pitch": 1.02,
+        "gain": 0,
+        "pause": 0.2
+      },
+      {
+        "who": "narrator",
+        "text": "Ping! Ping! Ping!",
+        "speed": 1.15,
+        "pitch": 1.14,
+        "gain": 0,
+        "pause": 0.3
+      }
+    ]
+  },
+  {
+    "id": "habit",
+    "accent": "work",
+    "spoken": "Soon she was buying them every single day, and filling every one, with more work.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "Soon she was buying them every single day,",
+        "speed": 1.12,
+        "pitch": 1.01,
+        "gain": 0,
+        "pause": 0.1
+      },
+      {
+        "who": "narrator",
+        "text": "and filling every one, with more work.",
+        "speed": 0.92,
+        "pitch": 0.97,
+        "gain": -1,
+        "pause": 0.55
+      }
+    ]
+  },
+  {
+    "id": "boat",
+    "accent": "boat",
+    "spoken": "Then one evening, her little boy held up a paper boat.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "Then one evening, her little boy held up a paper boat.",
+        "speed": 0.92,
+        "pitch": 1.02,
+        "gain": -1,
+        "pause": 0.35
+      }
+    ]
+  },
+  {
+    "id": "ask",
+    "accent": "float",
+    "spoken": "Mum, look! Will you watch it float?",
+    "parts": [
+      {
+        "who": "theo",
+        "text": "Mum, look! Will you watch it float?",
+        "speed": 1.02,
+        "pitch": 1.13,
+        "gain": 0,
+        "pause": 0.42
+      }
+    ]
+  },
+  {
+    "id": "minute",
+    "accent": "minute",
+    "spoken": "In a minute, sweetheart.",
+    "parts": [
+      {
+        "who": "nora",
+        "text": "In a minute, sweetheart.",
+        "speed": 0.94,
+        "pitch": 0.99,
+        "gain": -2,
+        "pause": 0.5
+      }
+    ]
+  },
+  {
+    "id": "empty",
+    "accent": "empty",
+    "spoken": "She reached for another five. Her purse... was empty.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "She reached for another five.",
+        "speed": 1.0,
+        "pitch": 1.0,
+        "gain": 0,
+        "pause": 0.4
+      },
+      {
+        "who": "narrator",
+        "text": "Her purse... was empty.",
+        "speed": 0.76,
+        "pitch": 0.95,
+        "gain": -2,
+        "pause": 0.5
+      }
+    ]
+  },
+  {
+    "id": "run",
+    "accent": "ran",
+    "spoken": "So she ran! All the way back to the clock shop.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "So she ran! All the way back to the clock shop.",
+        "speed": 1.16,
+        "pitch": 1.04,
+        "gain": 1,
+        "pause": 0.28
+      }
+    ]
+  },
+  {
+    "id": "plead",
+    "accent": "more",
+    "spoken": "Please! I just need five more minutes!",
+    "parts": [
+      {
+        "who": "nora",
+        "text": "Please! I just need five more minutes!",
+        "speed": 1.12,
+        "pitch": 1.06,
+        "gain": 2,
+        "pause": 0.4
+      }
+    ]
+  },
+  {
+    "id": "truth",
+    "accent": "single",
+    "spoken": "Oh, my dear. I never made a single minute. I only borrow them from later.",
+    "parts": [
+      {
+        "who": "orrin",
+        "text": "Oh, my dear.",
+        "speed": 0.76,
+        "pitch": 0.93,
+        "gain": -2,
+        "pause": 0.4
+      },
+      {
+        "who": "orrin",
+        "text": "I never made a single minute.",
+        "speed": 0.84,
+        "pitch": 0.93,
+        "gain": -1,
+        "pause": 0.45
+      },
+      {
+        "who": "orrin",
+        "text": "I only borrow them from later.",
+        "speed": 0.88,
+        "pitch": 0.96,
+        "gain": 0,
+        "pause": 0.55
+      }
+    ]
+  },
+  {
+    "id": "when",
+    "accent": "boats",
+    "spoken": "Later? When is later? When he's too big, for paper boats.",
+    "parts": [
+      {
+        "who": "nora",
+        "text": "Later? When is later?",
+        "speed": 0.88,
+        "pitch": 1.01,
+        "gain": -2,
+        "pause": 0.55
+      },
+      {
+        "who": "orrin",
+        "text": "When he's too big, for paper boats.",
+        "speed": 0.76,
+        "pitch": 0.91,
+        "gain": -3,
+        "pause": 0.85
+      }
+    ]
+  },
+  {
+    "id": "choose",
+    "accent": "off",
+    "spoken": "Nora looked at the clock. Then at her phone. And she switched it off.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "Nora looked at the clock.",
+        "speed": 0.9,
+        "pitch": 0.98,
+        "gain": -1,
+        "pause": 0.45
+      },
+      {
+        "who": "narrator",
+        "text": "Then at her phone.",
+        "speed": 0.88,
+        "pitch": 0.98,
+        "gain": -2,
+        "pause": 0.45
+      },
+      {
+        "who": "narrator",
+        "text": "And she switched it off.",
+        "speed": 0.84,
+        "pitch": 0.97,
+        "gain": -1,
+        "pause": 0.65
+      }
+    ]
+  },
+  {
+    "id": "show",
+    "accent": "show",
+    "spoken": "Okay, sweetheart. Show me.",
+    "parts": [
+      {
+        "who": "nora",
+        "text": "Okay, sweetheart. Show me.",
+        "speed": 0.86,
+        "pitch": 1.02,
+        "gain": -1,
+        "pause": 0.55
+      }
+    ]
+  },
+  {
+    "id": "float",
+    "accent": "five",
+    "spoken": "The little boat floated for exactly five minutes.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "The little boat floated for exactly five minutes.",
+        "speed": 0.92,
+        "pitch": 1.02,
+        "gain": 0,
+        "pause": 0.5
+      }
+    ]
+  },
+  {
+    "id": "end",
+    "accent": "buy",
+    "spoken": "Those were the only five minutes, she never had to buy.",
+    "parts": [
+      {
+        "who": "narrator",
+        "text": "Those were the only five minutes,",
+        "speed": 0.9,
+        "pitch": 1.0,
+        "gain": 0,
+        "pause": 0.22
+      },
+      {
+        "who": "narrator",
+        "text": "she never had to buy.",
+        "speed": 0.8,
+        "pitch": 0.98,
+        "gain": -1,
+        "pause": 2.0
+      }
+    ]
+  }
+]

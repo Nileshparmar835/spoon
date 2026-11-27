@@ -1,0 +1,11 @@
+Voice-only update for Nileshparmar835/fishstick, based on commit 16aa1df.
+Extract into your fishstick project root, replacing the five matching files.
+If you have made later edits, merge voice-update.patch instead; do not blindly overwrite them.
+The reference WAV is extracted from your uploaded video, not newly generated narration.
+Open the project in Claude and say:
+Read VOICE_DIRECTION.md. Listen to cartoon3d/reference/expressive_reference.wav using Earshot or an available audio-capable tool. Run the auditions, select and save the closest natural expressive delivery, then regenerate the narration and dependent timings. Keep the script words, visuals, characters, animation, music and sound design unchanged. Use only free local tools. Provide an audible comparison sample and honestly report whether it was listened to.
+
+Verified: Python compilation, audition-script preparation, git diff checks.
+Not verified: TTS inference, auditory similarity, complete render.
+The current am_michael voice remains the baseline until audition selection.
+No changes were pushed to GitHub.

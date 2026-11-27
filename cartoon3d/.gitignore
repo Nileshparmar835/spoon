@@ -1,0 +1,6 @@
+.venv/
+node_modules/
+models/
+audio/
+output/
+__pycache__/

@@ -1,0 +1,7 @@
+{
+  "name": "bell-street-fable-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local frame renderer for illustrated vertical fables",
+  "dependencies": { "@napi-rs/canvas": "0.1.100" }
+}

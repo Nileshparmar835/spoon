@@ -1,0 +1,6 @@
+{
+  "host_voice": "am_michael",
+  "selection_status": "baseline_pending_audition",
+  "reference": "reference/expressive_reference.wav",
+  "note": "Run studio/audition_voice.py and follow ../VOICE_DIRECTION.md before selecting the reference-style voice."
+}

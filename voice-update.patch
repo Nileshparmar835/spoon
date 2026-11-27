@@ -1,0 +1,214 @@
+diff --git a/CLAUDE.md b/CLAUDE.md
+index f6d196d..8427664 100644
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -1,2 +1,6 @@
+ For new videos in the cartoon-3D style, follow `.claude/skills/make-cartoon3d-video/SKILL.md` and work in `cartoon3d/`.
+ The other skills belong to the original 2D fable pipeline in `enigma-original/`.
++
++For narration, read `VOICE_DIRECTION.md` first. The user's latest reference-based
++expressive voice request overrides fixed Voice 13 instructions in older skills.
++Only revise the voice and regenerate dependent timing/media; retain the visuals.
+diff --git a/VOICE_DIRECTION.md b/VOICE_DIRECTION.md
+new file mode 100644
+index 0000000..46c65f9
+--- /dev/null
++++ b/VOICE_DIRECTION.md
+@@ -0,0 +1,101 @@
++# Voice-only revision: expressive reference delivery
++
++Read this before generating narration. It supersedes the older fixed “Voice 13”,
++fixed speed 1.05 directions for the host. All visual, story, character, camera,
++caption styling, music and SFX design decisions remain as they are.
++
++## Target and evidence
++
++The user supplied `vidssave.com Australia lost against birds!! 480P.mp4` as the
++new vocal reference. Use `cartoon3d/reference/expressive_reference.wav` if supplied,
++or extract its audio with FFmpeg. The supplied clip is 38.60 seconds long.
++The target is its expressive DELIVERY on new scripts: listen to establish accent,
++register, pacing changes, emphasis, pauses, sentence endings and emotional range.
++Do not infer those qualities from the filename or assume its speaker is Kokoro.
++This update has not been auditioned against that audio. No reference speaker/model
++has been identified. The current am_michael setting is a baseline, not a match.
++
++## Listen first
++
++1. Discover Earshot if available in your Claude environment. Inspect its actual
++   documentation, then use its audio-listening capability on the reference.
++   Do not invent Earshot commands, APIs, or successful listening results.
++2. Another audio-capable analysis tool is acceptable. A transcript, waveform,
++   pitch statistic or speech recogniser alone cannot judge vocal expressiveness.
++3. Listen to opening, middle and ending. Record timecoded observations in
++   `cartoon3d/output/voice_comparison.md`; distinguish observed qualities from
++   proposed settings. Compare on headphones or an audio-capable model.
++4. If listening is unavailable, still create the auditions below and expose them
++   for the user to compare. Mark matching as unverified; never claim “same voice”.
++
++## Free local synthesis and audition
++
++Use existing local Kokoro first. No paid APIs, subscriptions or paid credits.
++The reference is for style comparison, not audio to splice into a new story.
++
++From `cartoon3d/`, after its usual setup:
++
++    .venv/bin/python studio/audition_voice.py
++
++Windows: use `.venv\Scripts\python.exe` instead. This generates identical short,
++original lines for am_michael, am_fenrir and am_puck, each in its own directory
++under `output/voice_auditions/`. These are candidates, not asserted matches.
++Use each installed voice only if available; never replace a missing voice silently.
++Listen to each dry WAV next to the reference, at comparable listening loudness.
++Select for expressive phrasing, suitable vocal tone, clear consonants, natural
++pauses and sentence endings. Prefer naturalness to exaggeration. If none fit,
++say so; do not label the closest bad candidate a successful match.
++
++Save the chosen voice in `episode/voice_profile.json` under `host_voice`.
++Set `selection_status` to `auditioned` only after actual comparison and record
++which listener/tool made it. Future runs reuse that voice, not a random new one.
++The old name Voice 13 is no longer a requirement unless the user asks for it.
++
++## Direct each performance
++
++Preserve the script words and part order when only changing voice for an existing
++episode. Edit speed, gain and pause in `episode/make_script.py` (the source);
++editing generated `script.json` alone is overwritten by `make.py script`.
++Keep the crowd voice unchanged. For future scripts, keep connected thoughts
++rather than cutting every word into a separate synthesis call.
++
++Plan delivery per thought: intent, stressed words, pace and pause. Suggested
++starting points ONLY, to refine by listening:
++
++| Intent | Speed | Gain dB | Pause after |
++|---|---:|---:|---:|
++| Urgent hook | 1.08–1.15 | +0.5 | 0.12–0.20 s |
++| Clear explanation | 1.00–1.08 | 0 | 0.15–0.25 s |
++| Suspense/setup | 0.94–1.00 | -0.5 | 0.25–0.40 s |
++| Surprise/reaction | 1.04–1.12 | +1 | 0.15–0.25 s |
++| Dry payoff | 0.95–1.03 | 0 | 0.30–0.45 s |
++
++Use punctuation and sentence construction to invite emphasis. Kokoro has no
++reliable ElevenLabs-style emotion-tag interface: keep [laughing], [angry], etc.
++out of spoken text. Acting notes are instructions for generation and selection,
++not text to read aloud. Do not promise that speed/gain controls create emotions.
++Keep pitch at 1.0; this project's resampling pitch control changes timbre and can
++sound artificial. Do not mask flat delivery with pitch tricks or louder music.
++Regenerate and listen to weak takes. Avoid constant shouting, robotic uniformity,
++clipped word endings and excessive dramatic pauses.
++
++## Integrate without redesign
++
++    .venv/bin/python make.py script
++    .venv/bin/python make.py voice
++    .venv/bin/python make.py words
++    .venv/bin/python make.py sound
++
++`make.py voice` now reads the saved host voice automatically. A one-off override:
++
++    .venv/bin/python studio/voice.py episode/script.json output/test_voice --host-voice am_fenrir
++
++Keep the words and indices unchanged so existing word-index-based shots and
++sound cues follow the new timing. Rebuild subtitles, soundtrack and video from
++the regenerated timings. Check any absolute-time cues, total duration and closing
++hold. Do not use render --resume after changing narration. Do not redesign scenes.
++
++Before delivery, compare dry narration AND final mix with the reference, confirm
++word clarity and music balance, and provide a short audible sample. Report what
++was actually listened to, what was automatically checked and what remains
++unverified. A generated waveform alone is not a completed voice match.
+diff --git a/cartoon3d/episode/voice_profile.json b/cartoon3d/episode/voice_profile.json
+new file mode 100644
+index 0000000..f675c24
+--- /dev/null
++++ b/cartoon3d/episode/voice_profile.json
+@@ -0,0 +1,6 @@
++{
++  "host_voice": "am_michael",
++  "selection_status": "baseline_pending_audition",
++  "reference": "reference/expressive_reference.wav",
++  "note": "Run studio/audition_voice.py and follow ../VOICE_DIRECTION.md before selecting the reference-style voice."
++}
+diff --git a/cartoon3d/studio/audition_voice.py b/cartoon3d/studio/audition_voice.py
+new file mode 100644
+index 0000000..b26f350
+--- /dev/null
++++ b/cartoon3d/studio/audition_voice.py
+@@ -0,0 +1,44 @@
++"""Generate isolated Kokoro auditions; never overwrite production audio/script."""
++import argparse
++import json
++from pathlib import Path
++import subprocess
++import sys
++
++ROOT = Path(__file__).resolve().parents[1]
++CANDIDATES = ('am_michael', 'am_fenrir', 'am_puck')
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--voices', nargs='+', default=list(CANDIDATES))
++    parser.add_argument('--prepare-only', action='store_true', help='Write audition script without loading TTS')
++    args = parser.parse_args()
++    # Prevent command-line voice names from escaping the audition directory.
++    if any(not v.replace('_', '').isalnum() for v in args.voices):
++        parser.error('Voice names must contain only letters, digits and underscores.')
++    output = ROOT / 'output/voice_auditions'
++    output.mkdir(parents=True, exist_ok=True)
++    lines = [
++        ('hook', "They built a machine to save ten seconds. It wasted the entire day!", 1.10, 0.5, .18),
++        ('setup', "At first, everything worked. Then someone pressed the button twice.", 1.02, 0, .32),
++        ('reveal', "Wait. Twice? That was the one thing nobody had tested.", .98, .5, .38),
++        ('payoff', "Their brilliant solution? Put a sign on the button.", 1.01, 0, .45),
++    ]
++    script = output / 'audition_script.json'
++    script.write_text(json.dumps([
++        {'id': key, 'spoken': text, 'parts': [dict(who='host', text=text,
++          speed=speed, pitch=1.0, gain=gain, pause=pause)]}
++        for key, text, speed, gain, pause in lines
++    ], indent=2), encoding='utf-8')
++    if args.prepare_only:
++        print(script)
++        return
++    for voice in args.voices:
++        subprocess.run([sys.executable, str(ROOT / 'studio/voice.py'), str(script),
++                        str(output / voice), '--host-voice', voice], check=True)
++    print('Auditions ready. Compare the WAVs with the reference; see VOICE_DIRECTION.md.')
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/cartoon3d/studio/voice.py b/cartoon3d/studio/voice.py
+index 4b0b82b..ac2df55 100644
+--- a/cartoon3d/studio/voice.py
++++ b/cartoon3d/studio/voice.py
+@@ -66,7 +66,12 @@ def take(engine, session, styles, part):
+ def main():
+     ap = argparse.ArgumentParser()
+     ap.add_argument('phrases', type=Path); ap.add_argument('folder', type=Path)
++    ap.add_argument('--host-voice', help='Override the saved narrator for an audition')
+     args = ap.parse_args()
++    profile_path = ROOT / 'episode/voice_profile.json'
++    profile = json.loads(profile_path.read_text(encoding='utf-8')) if profile_path.exists() else {}
++    host_voice = args.host_voice or profile.get('host_voice', 'am_michael')
++    cast = {**CAST, 'host': {host_voice: 1.0}}
+     rows = json.loads(args.phrases.read_text(encoding='utf-8'))
+     pieces, words, beats = [np.zeros(int(SR * .35), np.float32)], [], []
+     n = len(pieces[0])
+@@ -77,7 +82,7 @@ def main():
+         timing_model(ROOT / 'models/kokoro-v1.0.onnx', timed)
+         session = ort.InferenceSession(str(timed), sess_options=opts, providers=['CPUExecutionProvider'])
+         engine = Kokoro.from_session(session, str(ROOT / 'models/voices-v1.0.bin'))
+-        styles = {k: sum(engine.get_voice_style(v) * w for v, w in mix.items()) for k, mix in CAST.items()}
++        styles = {k: sum(engine.get_voice_style(v) * w for v, w in mix.items()) for k, mix in cast.items()}
+         for index, row in enumerate(rows):
+             start = 0 if index == 0 else n / SR
+             parts = []
+@@ -97,6 +102,7 @@ def main():
+         wav.writeframes((track * 32767).astype('<i2').tobytes())
+     (args.folder / 'words.json').write_text(json.dumps(words, indent=2))
+     (args.folder / 'beats.json').write_text(json.dumps(beats, indent=2))
++    (args.folder / 'voice_used.json').write_text(json.dumps({'host_voice': host_voice, 'engine': 'kokoro-onnx'}, indent=2))
+     print(f'{n / SR:.2f} s, {len(words)} timed words')
+ 
+ if __name__ == '__main__':

@@ -1,0 +1,5 @@
+./vendor/phonemizer-3.6.0-py3-none-any.whl
+./vendor/kokoro_onnx-0.6.1-py3-none-any.whl
+onnxruntime==1.32.0
+numpy==2.5.5
+espeakng-loader==0.2.4
